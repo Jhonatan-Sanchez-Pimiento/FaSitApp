@@ -1,0 +1,67 @@
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+}
+
+a{
+   text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+#header{
+    position: relative;
+    text-align: center;
+    margin: 5px;
+    border: 2px black;
+    height: 20%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+#nav{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+#menu{
+    background-color: aqua;
+    display: inline;
+    width: 70%;
+    border: 1px black;
+    font: bold 14px;
+}
+
+#usuario-login{
+    margin-left: 5px;
+    padding-left: 10px;
+    background-color: red;
+    width: 27%;
+    float: right;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.list-usuario-login{
+    padding-left: 20px;
+}
+
+#logo-menu{
+    text-align: center;
+    background-color: brown;
+    transform: translate(200%, 0%);
+}
+
+#title-section{
+    text-align: center;
+    background-color:pink;
+    position: relative;
+}
