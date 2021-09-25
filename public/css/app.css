@@ -9,9 +9,7 @@ html{
     margin: 5px;
     border: 2px black;
     height: 20%;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
@@ -34,9 +32,7 @@ html{
     background-color: red;
     width: 27%;
     float: right;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     align-content: center;
 }
