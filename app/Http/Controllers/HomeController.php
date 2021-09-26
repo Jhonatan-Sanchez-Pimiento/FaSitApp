@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index(){
-        $posts = Home::get();
-
-        return view('blog', compact('tituloFavorito')); 
+        $favoritos = Usuario::paginate(10);
+        return view('home', compact('favoritos')); 
     }
 }

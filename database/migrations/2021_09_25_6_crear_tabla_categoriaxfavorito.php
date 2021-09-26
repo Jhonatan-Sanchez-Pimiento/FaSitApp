@@ -17,12 +17,13 @@ class CrearTablaCategoriaxfavorito extends Migration
             $table->id();
             $table->unsignedBigInteger('categoria_id')->nullable();
             $table->unsignedBigInteger('favorito_id')->nullable();
-            $table->foreign('categoria_id')->references('categoria_id')
+            $table->foreign('categoria_id')->references('id')
                 ->on('categoria')
                 ->onDelete('set null');
-            $table->foreign('favorito_id')->references('favorito_id')
+            $table->foreign('favorito_id')->references('id')
                 ->on('favorito')
                 ->onDelete('set null');
+                $table->timestamps();
         });
     }
 

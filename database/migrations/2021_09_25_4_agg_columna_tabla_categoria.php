@@ -14,10 +14,10 @@ class AggColumnaTablaCategoria extends Migration
     public function up()
     {
         Schema::table('categoria', function (Blueprint $table) {
-            $table->unsignedBigInteger('usuario_id')->nullable();
-            $table->foreign('usuario_id')->references('usuario_id')
+            $table->unsignedBigInteger('usuario_id')->nullable()->after('id');
+            $table->foreign('usuario_id')->references('id')
                     ->on('usuario')
-                    ->onDelete('set null');
+                    ->onDelete('cascade');
         });
     }
 

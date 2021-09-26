@@ -14,12 +14,11 @@ class CrearTablaFavorito extends Migration
     public function up()
     {
         Schema::create('favorito', function (Blueprint $table) {
-            $table->id('favorito_id');
+            $table->id();
             $table->string('titulo');
             $table->text('favorito_url',2083)->nullable();
             $table->boolean('visibilidad')->default(false)->comment('false=Publico , true=privado');
-            $table->dateTime('fecha_creacion_usuario')->nullable();
-            $table->dateTime('fecha_modificacion_usuario')->nullable();
+            $table->timestamps();
         });
     }
 
