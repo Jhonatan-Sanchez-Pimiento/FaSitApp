@@ -10,71 +10,25 @@
     <title>FaSitApp</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 </head>
-
 <body>
     <div id="header">
-        <div id="logo-menu">
-            <img src="{{ asset('img/favorito.svg') }}" width="80" height="40">
-            <span id='nombre-pagina'>FaSitApp<b> Favorite Sites Application</b></span>
-        </div>
-    </div>
-    <div id="menu">
-        <ul>
-            <li>
-                <a href="{{ route('home') }}">
-                    {{config('app.name')}}
-                </a>
-                <ul>
-                    <li> <a href="{{route('usuario.create')}}">Crear usuario</a></li>
-                    <li> <a href="{{route('usuario.index')}}">mostrar usuario</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="{{ route('favorito.create') }}">
-                    favorito
-                </a>
-            </li>
-            @guest
-                <li>
-                    <a href="{{ route('login') }}">
-                        Iniciar Sesión
-                    </a>
+    <ul class="nav">
+        <li><a href="{{ route('home') }}">{{config('app.name')}}</a></li>
+        <li><a href="">Registrar</a>
+            <ul>
+                <li><a href="{{route('usuario.create')}}">Usuario</a></li>
+                <li><a href="{{route('categoria.create')}}">Categoria</a></li>
+                <li><a href="{{route('favorito.create')}}">Favorito</a></li>
                 </li>
-                <li class="row-usuario-login">
-                    <a href="{{ route('usuario.create') }}">
-                        Registrarse
-                    </a>
-                </li>
-            @else
-                <li>
-                    <a href="{{ route('login') }}">
-                        Sesion iniciada
-                    </a>
-                    <ul>
-                        <li> <a href="{{route('usuario.create')}}">Crear usuario</a></li>
-                        <li> <a href="{{route('usuario.index')}}">mostrar usuario</a></li>
-                    </ul>
-                </li>
-                <li class="row-usuario-login">
-                    <a href="{{ route('usuario.create') }}">
-
-                        Confinguracion
-                    </a>
-                </li>
-            @endguest
-            <li>
-                <a href="{{ route('categoria.create') }}">
-                    Categoria
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div id="section">
-        <div id="title-section">
+            </ul>
+        </li>
+        <li><a href="{{route('login')}}">Login</a></li>
+    </ul>
+</div>
+    
             @yield('titulo')
-        </div>
+        </
         @yield('contenido')
-    </div>
     <div id="footer">
         <br>pie de pagina
     </div>

@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.SinMenu')
 
 @section('titulo')
 Prueba

@@ -6,6 +6,6 @@
        {{$usuario}}
 </h1>
 <a href="{{route('usuario.edit',$usuario)}}">
-<input type="button" name="btnEdit" value="Editar"/>
+Editar
 </a>
 @endsection

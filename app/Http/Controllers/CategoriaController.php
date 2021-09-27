@@ -28,7 +28,6 @@ class CategoriaController extends Controller
     {
             
             $this->validate($request , [
-                'nombre' => 'required',
                 'titulo' => 'required'
             ]);
             $categoria = new Categoria();

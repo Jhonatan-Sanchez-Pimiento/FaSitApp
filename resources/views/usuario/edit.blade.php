@@ -6,7 +6,16 @@
     <form class='form-usuario' method="POST" action="{{ route('usuario.actualizar', $usuario) }}">
         @csrf
         @method('put')
-
+        
+        @if (count($errors)>0)
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>
+                        {{$error}}
+                    </li>
+                @endforeach
+            </ul>
+        @endif
         <div class="row">
             <label>Primer Nombre:
                 <input type="text" name="primerNombre" value="{{ $usuario->primer_nombre }}" /></label>
@@ -21,12 +30,7 @@
         </div>
         <div class="row">
             <label>Email: <input type="text" name="email" value="{{ $usuario->email }}" /></label>
-            <label>Confirmación Email: <input type="text" name="confirmacionEmail" value="{{ $usuario->email }}" /></label>
-        </div>
-        <div class="row">
-            <label>Contraseña: <input type="password" name="contrasena" value="{{ $usuario->contrasena }}" /></label>
-            <label>Confirmación Contraseña: <input type="text" name="confirmacionContrasena"
-                    value="{{ $usuario->contrasena }}" /></label>
+            <label>Contraseña: <input type="password" name="password" value="{{ $usuario->contrasena }}" /></label>
         </div>
         <div class="row-boton">
             <button type="submit">Actualizar</button>

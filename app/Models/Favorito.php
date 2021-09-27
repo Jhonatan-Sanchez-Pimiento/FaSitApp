@@ -16,4 +16,11 @@ public function usuario()
     return $this->belongsTo(Usuario::class, 'usuario_id');
 }
 
+public function roles()
+{
+    return $this
+        ->belongsToMany('App\Model\Categoria')
+        ->withTimestamps();
+}
+
 }

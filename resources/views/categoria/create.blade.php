@@ -20,9 +20,6 @@
         @endif
 
         <div class="row">
-            <label>Nombre: <input type="text" name="nombre" value="{{old('nombre')}}"/></label>
-        </div>
-        <div class="row">
             <label>Titulo: <input type="text" name="titulo" value="{{old('titulo')}}"/></label>
         </div>
         <div class="row-boton">

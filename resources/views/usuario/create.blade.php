@@ -26,11 +26,7 @@
         </div>
         <div class="row">
             <label>Email: <input type="text" name="email" /></label>
-            <label>Confirmación Email: <input type="text" name="confirmacionEmail" /></label>
-        </div>
-        <div class="row">
-            <label>Contraseña: <input type="password" name="contrasena" /></label>
-            <label>Confirmación Contraseña: <input type="text" name="confirmacionContrasena" /></label>
+            <label>Contraseña: <input type="password" name="password" /></label>
         </div>
         <div class="row-boton">
             <button type="submit">Registrar</button>

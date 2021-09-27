@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Categoria;
 use App\Models\Favorito;
+use Illuminate\Support\Facades\DB;
 
 class Usuario extends Model
 {
@@ -21,4 +22,5 @@ class Usuario extends Model
     {
         return $this->hasMany(Favorito::class);
     }
+
 }

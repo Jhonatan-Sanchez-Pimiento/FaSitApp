@@ -24,11 +24,10 @@ class UsuarioRequest extends FormRequest
     public function rules()
     {
         return [
-            'primerNombre'=> 'required|is_string',
+            'primerNombre'=> 'required',
             'primerApellido'=> 'required',
             'email'=> 'required',
-            'contrasena'=> 'required',
-
+            'password'=> 'required'
         ];
     }
 }

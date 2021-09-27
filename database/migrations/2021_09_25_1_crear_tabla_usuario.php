@@ -15,13 +15,12 @@ class CrearTablaUsuario extends Migration
     {
         Schema::create('usuario', function (Blueprint $table) {
             $table->id();
-            $table->string('primer_nombre',15);
-            $table->string('segundo_nombre',20)->nullable();
-            $table->string('primer_apellido',15);
-            $table->string('segundo_apellido',15)->nullable();
+            $table->string('primer_nombre',30);
+            $table->string('segundo_nombre',30)->nullable();
+            $table->string('primer_apellido',30);
+            $table->string('segundo_apellido',30)->nullable();
             $table->string('email')->unique();
-            $table->string('contrasena',30);
-            $table->rememberToken();
+            $table->string('password');
             $table->timestamps();
         });
     }

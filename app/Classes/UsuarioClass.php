@@ -9,28 +9,30 @@ use Illuminate\Support\Facades\DB;
 Class UsuarioClass {
     public static function almacenarDatos(Request $request, Usuario $usuario)
     {
+       //funcion que permite almacenar los datos
         $usuario->primer_nombre = $request->primerNombre;
         $usuario->segundo_nombre = $request->segundoNombre;
         $usuario->primer_apellido = $request->primerApellido;
         $usuario->segundo_apellido = $request->segundoApellido;
         $usuario->email = $request->email;
-        $usuario->contrasena = $request->contrasena;
+        $usuario->password = $request->password;
 
         $usuario->save();
 
         return redirect()->route('usuario.show', $usuario);
+        
     }
 
     public static function getUsuario($id)
     {
-        $usuario = DB::select('SELECT * FROM usuario where id=' . $id);
+        $usuario = DB::table('usuario')->where('id',$id)->first();
         return $usuario;
     }
 
-    public function validarEmail($email)
+    public static function validarEmail($email)
     {
-        $emailUsuario = Usuario::where('email', $email);
-        if (!empty($emailUsuario)) {
+        $emailUsuario = DB::table('usuario')->where('email',$email)->first();
+        if ($emailUsuario == null) {
             return true;
         } else {
             return false;

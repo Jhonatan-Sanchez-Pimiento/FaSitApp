@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Classes\FavoritoClass;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
-use App\Models\Favorito;   
+use App\Models\Favorito; 
 
 class FavoritoController extends Controller
 {
@@ -16,7 +17,8 @@ class FavoritoController extends Controller
 
     public function create()
     {
-        return view('favorito.create');
+        $categorias = Categoria::all();
+        return view('favorito.create',compact('categorias'));
     }
 
     public function show(Favorito $favorito)

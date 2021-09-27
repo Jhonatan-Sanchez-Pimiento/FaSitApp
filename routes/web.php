@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\FavoritoController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +22,10 @@ use App\Http\Controllers\FavoritoController;
 Route::get('/',[HomeController::class,'index'])->name('home');
 
 //ruta login
-Route::get('login',[UsuarioController::class,'login'] )->name('login');
-Route::post('login',[UsuarioController::class,'auth'] )->name('login.auth');
+Route::get('login',[LoginController::class,'index'] )->name('login');
+Route::post('login',[LoginController::class,'auth'] )->name('login.auth');
+
 //rutas usuario 
-Route::get('usuario/index',[UsuarioController::class,'index'])->name('usuario.index');   
 Route::get('usuario/create',[UsuarioController::class,'create'])->name('usuario.create');    
 Route::get('usuario/{usuario}',[UsuarioController::class,'show'])->name('usuario.show'); 
 Route::post('usuario',[UsuarioController::class,'registrar'])->name('usuario.registrar'); 
